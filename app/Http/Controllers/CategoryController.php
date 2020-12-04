@@ -33,7 +33,7 @@ class CategoryController extends Controller
                 return ['error' => 1, 'info' => $messages];
             }
 
-            // SI TRAE idBoleta MODIFICA SINO CREA NUEVO
+            // SI TRAE idCategory MODIFICA SINO CREA NUEVO
             if( !$values['idCategory'] ){
                 $category = new CategoryModel();
             } else {
@@ -46,7 +46,7 @@ class CategoryController extends Controller
                 return ['error' => 1, 'info' => 'No ha sido posible Guardar categoría.'];
             }
 
-            return ['error' => 0,'info' => 'Categoria guardada correctamente'];
+            return ['error' => 0,'info' => 'Categoría guardada correctamente'];
 
         } catch(Exception $e) {
             error_log($e,0);

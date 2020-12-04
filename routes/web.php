@@ -19,4 +19,8 @@ Route::group(['middleware' => 'cors'], function(){
     Route::get('/categories', 'CategoryController@getCategories');
     Route::post('/category/save', 'CategoryController@saveCategory');
     Route::post('/category/delete', 'CategoryController@deleteCategory');
+
+	Route::get('/tags', 'TagController@getTags');
+    Route::post('/tag/save', 'TagController@saveTag');
+    Route::post('/tag/delete', 'TagController@deleteTag');
 });
