@@ -14,3 +14,9 @@
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::group(['middleware' => 'cors'], function(){
+    Route::get('/categories', 'CategoryController@getCategories');
+    Route::post('/category/save', 'CategoryController@saveCategory');
+    Route::post('/category/delete', 'CategoryController@deleteCategory');
+});
