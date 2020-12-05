@@ -166,9 +166,13 @@ class PetController extends Controller
             ->where(function($query) use ($values, $PE) {
                 if(!empty($values['inputSearch'])) {
                     $query->orWhere("$PE.name", 'like', "%".$values['inputSearch']."%");
+                    $query->orWhere("$PE.id", $values['inputSearch']);
+                }
+                if(!empty($values['searchStatus'])) {
+                    $query->orWhere("$PE.status", $values['searchStatus']);
                 }
             })
-            ->orderBy("$PE.name")
+            ->orderBy("$PE.id")
             ->get();
 
             foreach ($pets as $index => $data) {
