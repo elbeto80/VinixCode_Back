@@ -23,4 +23,9 @@ Route::group(['middleware' => 'cors'], function(){
 	Route::get('/tags', 'TagController@getTags');
     Route::post('/tag/save', 'TagController@saveTag');
     Route::post('/tag/delete', 'TagController@deleteTag');
+
+    Route::get('/pet/params', 'PetController@paramsPets');
+    Route::post('/pet', 'PetController@savePet');
+    Route::get('/pet', 'PetController@getPets');
+    Route::post('/pet/delete', 'PetController@deletePet');
 });
