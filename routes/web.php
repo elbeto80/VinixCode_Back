@@ -16,6 +16,8 @@ Route::get('/', function () {
 });
 
 Route::group(['middleware' => 'cors'], function(){
+	Route::get('/home', 'HomeController@paramsHome');
+
     Route::get('/categories', 'CategoryController@getCategories');
     Route::post('/category/save', 'CategoryController@saveCategory');
     Route::post('/category/delete', 'CategoryController@deleteCategory');
